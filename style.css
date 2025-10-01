@@ -1,0 +1,62 @@
+/* Custom styles for better dark mode and interactivity */
+body {
+    font-family: 'Poppins', sans-serif; /* Default font */
+    background-color: #000000; /* gray-900 */
+    color: #d1d5db; /* gray-300 */
+}
+.container {
+    max-width: 800px;
+}
+.card {
+    background-color: #121212; /* gray-800 */
+    border: 1px solid #27272a; /* gray-700 */
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.tab-button {
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+.tab-button.active {
+    color: #ffffff; /* cyan-400 */
+    border-bottom-color: #ffffff; /* cyan-400 */
+}
+.timeline-item .timeline-content {
+    transition: background-color 0.3s ease;
+}
+.timeline-item:hover .timeline-content {
+    background-color: #18181b; /* gray-700 */
+}
+input[type="text"] { /* Changed from number to text for formatting */
+    background-color: #18181b;
+    border: 1px solid #3f3f46;
+    color: white;
+}
+input[type="text"]:focus {
+    outline: none;
+    border-color: #ffffff;
+    box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.5);
+}
+.accordion-header svg {
+    transition: transform 0.3s ease;
+}
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease;
+    padding: 0 1rem;
+}
+.accordion-body.open {
+   max-height: 2000px; /* Adjust as needed */
+   padding: 1.5rem 1rem;
+}
+/* Utility to hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
