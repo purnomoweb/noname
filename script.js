@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
     btnConvert.addEventListener('click', () => switchTab(1));
     btnApps.addEventListener('click', () => switchTab(2));
     
-    switchTab(1); // Initial state
+    // Initial State changed to Fee Convert
+    switchTab(1); 
 
     // --- Accordion Logic ---
     const accordionHeaders = document.querySelectorAll('.accordion-header');
@@ -113,10 +114,10 @@ document.addEventListener('DOMContentLoaded', function() {
         let additionalFee = 0;
         const selectedPlatformFee = document.querySelector('input[name="platform-fee"]:checked').value;
 
-        if (selectedPlatformFee === 'prem') {
+        if (selectedPlatformFee === 'prem' && amount > 0) {
             additionalFee = calculateConvertFeeLogic('prem', amount);
             rekberAdditionalFeeLine.classList.remove('hidden');
-        } else if (selectedPlatformFee === 'nonprem') {
+        } else if (selectedPlatformFee === 'nonprem' && amount > 0) {
             additionalFee = calculateConvertFeeLogic('nonprem', amount);
             rekberAdditionalFeeLine.classList.remove('hidden');
         } else {
@@ -175,4 +176,3 @@ document.addEventListener('DOMContentLoaded', function() {
     calculateRekberFee();
     calculateConvertFee();
 });
-
