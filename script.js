@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     btnConvert.addEventListener('click', () => switchTab(1));
     btnApps.addEventListener('click', () => switchTab(2));
     
-    switchTab(0); // Initial state
+    switchTab(1); // Initial state
 
     // --- Accordion Logic ---
     const accordionHeaders = document.querySelectorAll('.accordion-header');
