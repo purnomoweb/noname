@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const amount = parseInt(cleanValue) || 0;
         let standardFee = 0;
         
-        if (amount >= 1000 && amount <= 10999) standardFee = 0;
+        if (amount >= 1000 && amount <= 10999) standardFee = 500;
         else if (amount >= 11000 && amount <= 50999) standardFee = 1000;
         else if (amount >= 51000 && amount <= 100999) standardFee = 1500;
         else if (amount >= 101000 && amount <= 150999) standardFee = 2000;
