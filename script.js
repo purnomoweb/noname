@@ -95,19 +95,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const amount = parseInt(cleanValue) || 0;
         let standardFee = 0;
         
-        if (amount >= 1 && amount <= 9999) standardFee = 0;
-        else if (amount >= 10000 && amount <= 30999) standardFee = 30;
-        else if (amount >= 31000 && amount <= 60999) standardFee = 60;
-        else if (amount >= 61000 && amount <= 90999) standardFee = 90;
-        else if (amount >= 91000 && amount <= 110999) standardFee = 120;
-        else if (amount >= 111000 && amount <= 200999) standardFee = 240;
-        else if (amount >= 201000 && amount <= 300999) standardFee = 360;
-        else if (amount >= 301000 && amount <= 400999) standardFee = 480;
-        else if (amount >= 401000 && amount <= 500999) standardFee = 600;
+        if (amount >= 1000 && amount <= 10999) standardFee = 0;
+        else if (amount >= 11000 && amount <= 50999) standardFee = 1000;
+        else if (amount >= 51000 && amount <= 100999) standardFee = 1500;
+        else if (amount >= 101000 && amount <= 150999) standardFee = 2000;
+        else if (amount >= 151000 && amount <= 200999) standardFee = 2500;
+        else if (amount >= 201000 && amount <= 250999) standardFee = 3000;
+        else if (amount >= 251000 && amount <= 300999) standardFee = 3500;
+        else if (amount >= 301000 && amount <= 350999) standardFee = 4000;
+        else if (amount >= 351000 && amount <= 400999) standardFee = 4500;
+        else if (amount >= 401000 && amount <= 450999) standardFee = 5000;
+        else if (amount >= 451000 && amount <= 500999) standardFee = 5500;
         else if (amount > 500999) {
-            const baseFee = 600;
+            const baseFee = 5500;
             const extraAmount = amount - 500999;
-            const extraFee = Math.ceil(extraAmount / 100000) * 120;
+            const extraFee = Math.ceil(extraAmount / 50000) * 500;
             standardFee = baseFee + extraFee;
         }
 
